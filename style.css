@@ -20,6 +20,7 @@
 
 .productContainer h1{
     padding: 10px;
+    
 }
 .productList{
     display: grid;
@@ -53,7 +54,7 @@ display: flex;
 justify-content: space-evenly;
 align-items: center;
 width: 60%;
-
+padding: 5px;
 border-radius: 20px;
 background-color: #fff;
 color: black;
@@ -119,6 +120,7 @@ color: black;
     height: 15px;
     border-radius: 50%;
     z-index: 999;
+ 
     background: none;
 }
 .quantyImg{
@@ -313,100 +315,49 @@ transform: translateY(-2px);
 
 /****Responisve**/
 
-@media (max-width: 1014px) {
-  .container {
-  
-    flex-direction: column;
-      padding: 10px 70px;
+@media (max-width:1024px){
+  .productList{
+    grid-template-columns: repeat(3,200px);
   }
-  .productContainer{
-   padding: 10px;
-   
+  
 }
-  .productList {
-    grid-template-columns: repeat(3, 200px);
+@media (max-width:768px){
+ .container{
+  place-items: center;
+  flex-direction: column;
+ 
+ }
+ .productCart{
+  width: 90%;
+ }
+ .productList{
+  grid-template-columns: repeat(2,1fr);
+ }
+}
+@media (max-width:425px) {
+  .productList{
+    place-items: center;
+    grid-template-columns:1fr;
+    
+  }
+  .text{
+    padding: 0 10px;
   }
   .productCart{
     width: 100%;
   }
-   .Cartbtn{
-    padding:  10px;
+}
+@media (max-width:768px) {
+  .cartModal{
+    width: 90%;
   }
 }
-
+@media (max-width:330px){
+  .cartModal h1{
+    font-size: 20px;
+  }
+  .cartModal p{
+    font-size: 10px;
+  }
+}
 /* Desktop */
-@media (max-width: 1024px) {
-  .container {
-    
-    padding: 10px 70px;
-  }
-
-  .productContainer {
-    padding: 10px;
-  }
-
-  .productList {
-    grid-template-columns: repeat(3, 200px);
-  }
-
-  .productCart {
-    width: 30%;
-  }
-
-  .Cartbtn {
-    padding: 10px;
-  }
-}
-
-
-@media (min-width: 511px) and (max-width: 1023px) {
-  .productList {
-    grid-template-columns: repeat(3, 200px);
-  }
-}
-
-
-@media (max-width: 510px) {
-  .container {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  .productList {
-    place-items: center;
-    grid-template-columns: repeat(1, 300px);
-  }
-
-  .productCart {
-    width: 100%;
-  }
-
-  .productContainer h1 {
-    text-align: center;
-  }
-
-  .cartModal {
-    width: 100%;
-  }
-}
-
-
-@media (max-width: 320px) {
-  .container {
-    padding: 0; 
-  }
-
-  .productList {
-    place-items: center;
-    grid-template-columns: repeat(1, 300px);
-  }
-
-  .productCart {
-    width: 100%;
-  }
-}
-@media (max-width:989px){
-    .productCart{
-        width: 100%;
-    }
-}
